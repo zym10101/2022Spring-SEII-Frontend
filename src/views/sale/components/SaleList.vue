@@ -37,10 +37,10 @@
           <el-col :span="3">
             <span><strong>销售商id: </strong>{{ item.supplier }}</span>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="6">
             <span><strong>操作员: </strong>{{ item.operator }}</span>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="6">
             <span><strong>业务员: </strong>{{ item.salesman }}</span>
           </el-col>
           <el-col :span="6">

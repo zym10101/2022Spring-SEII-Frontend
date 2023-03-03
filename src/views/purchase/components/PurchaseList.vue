@@ -37,7 +37,7 @@
           <el-col :span="3">
             <span><strong>供应商id: </strong>{{ item.supplier }}</span>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="6">
             <span><strong>操作员: </strong>{{ item.operator }}</span>
           </el-col>
           <el-col :span="6">

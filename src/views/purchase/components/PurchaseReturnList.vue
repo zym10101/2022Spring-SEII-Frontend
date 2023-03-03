@@ -34,10 +34,10 @@
       </template>
       <div>
         <el-row>
-          <el-col :span="8">
+          <el-col :span="9">
             <span><strong>关联的进货单id: </strong>{{ item.purchaseSheetId }}</span>
           </el-col>
-          <el-col :span="3">
+          <el-col :span="6">
             <span><strong>操作员: </strong>{{ item.operator }}</span>
           </el-col>
           <el-col :span="6">
