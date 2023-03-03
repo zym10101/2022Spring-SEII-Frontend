@@ -383,7 +383,7 @@ export default {
 .logout-fix {
   position: fixed;
   left: 30px;
-  bottom: 86%;
+  bottom: 5%;
 }
 
 .button1 {

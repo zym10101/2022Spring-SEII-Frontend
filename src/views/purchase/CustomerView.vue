@@ -13,7 +13,7 @@
         <el-table-column
             prop="id"
             label="id"
-            width="60">
+            width="40">
         </el-table-column>
         <el-table-column
             prop="name"

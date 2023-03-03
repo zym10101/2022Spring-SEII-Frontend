@@ -49,12 +49,12 @@
           <el-table-column
             prop="total"
             label="前11个月工资"
-            min-width="150">
+            min-width="130">
           </el-table-column>
           <el-table-column
             prop="yearBonus"
             label="年终奖"
-            min-width="150">
+            min-width="130">
           </el-table-column>
           <el-table-column
             label="操作" min-width="120">

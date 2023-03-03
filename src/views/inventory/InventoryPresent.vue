@@ -11,7 +11,7 @@
       >
         <el-table-column fixed type="index" label="行号" min-width="15%">
         </el-table-column>
-        <el-table-column prop="id" label="单号" min-width="12%">
+        <el-table-column prop="id" label="单号" min-width="20%">
         </el-table-column>
         <el-table-column prop="batchId" label="批次" min-width="8%">
         </el-table-column>
@@ -24,9 +24,9 @@
         </el-table-column>
         <el-table-column prop="pid" label="商品id" min-width="15%">
         </el-table-column>
-        <el-table-column prop="purchasePrice" label="单价" min-width="12%">
+        <el-table-column prop="purchasePrice" label="单价" min-width="8%">
         </el-table-column>
-        <el-table-column prop="zsQuantity" label="赠送数量" min-width="12%">
+        <el-table-column prop="zsQuantity" label="赠送数量" min-width="8%">
         </el-table-column>
       </el-table>
     </div>

@@ -7,72 +7,75 @@
     </el-button>
     <div>
       <el-table
-          :data="searchEmployee(employeeList)"
-          stripe
-          border
-          style="width:100%"
-          :header-cell-style="{'text-align':'center'}"
-          :cell-style="{'text-align':'center'}">
+        :data="searchEmployee(employeeList)"
+        stripe
+        border
+        style="width:100%"
+        :header-cell-style="{'text-align':'center'}"
+        :cell-style="{'text-align':'center'}">
         <el-table-column
-            prop="id"
-            label="ID">
+          prop="id"
+          label="ID"
+          width="80">
         </el-table-column>
         <el-table-column
-            prop="name"
-            label="姓名"
-            width="80">
+          prop="name"
+          label="姓名"
+          width="80">
         </el-table-column>
         <el-table-column
-            prop="sex"
-            label="性别"
-            width="50">
+          prop="sex"
+          label="性别"
+          width="50">
         </el-table-column>
         <el-table-column
-            prop="birthday"
-            label="出生日期"
-            width="100">
+          prop="birthday"
+          label="出生日期"
+          width="150">
           <template slot-scope="scope">
             {{ formatBirthday(scope.row.birthday) }}
           </template>
         </el-table-column>
         <el-table-column
-            prop="phoneNumber"
-            label="手机"
-            width="120">
+          prop="phoneNumber"
+          label="手机"
+          width="150">
         </el-table-column>
         <el-table-column
-            prop="bankAccount"
-            label="银行账户"
-            width="180">
+          prop="bankAccount"
+          label="银行账户"
+          width="250">
         </el-table-column>
         <el-table-column
-            prop="position"
-            label="工作岗位"
-            width="110">
+          prop="position"
+          label="工作岗位"
+          width="120">
         </el-table-column>
         <el-table-column
-            prop="salaryCalculationStrategy"
-            label="薪资计算方式"
-            width="120">
+          prop="salaryCalculationStrategy"
+          label="薪资计算方式"
+          width="120">
         </el-table-column>
         <el-table-column
-            label="操作">
+          label="操作"
+          width="100">
           <template slot-scope="scope">
             <el-button
-                @click.native.prevent="editInfo(scope.row)"
-                type="warning"
-                size="small">
+              @click.native.prevent="editInfo(scope.row)"
+              type="warning"
+              size="small">
               编辑
             </el-button>
           </template>
         </el-table-column>
         <el-table-column
-            label="删除">
+          label="删除"
+        >
           <template slot-scope="scope">
             <el-button
-                @click.native.prevent="deleteEmployee(scope.row.id)"
-                type="danger"
-                size="small">
+              @click.native.prevent="deleteEmployee(scope.row.id)"
+              type="danger"
+              size="small">
               删除
             </el-button>
           </template>
@@ -80,10 +83,10 @@
       </el-table>
     </div>
     <el-dialog
-        title="员工入职登记"
-        :visible.sync="dialogVisible"
-        width="40%"
-        :before-close="handleClose">
+      title="员工入职登记"
+      :visible.sync="dialogVisible"
+      width="40%"
+      :before-close="handleClose">
       <div style="width: 90%; margin: 0 auto">
         <el-form :model="employeeForm" label-width="120px" ref="employeeForm" :rules="rules">
           <el-form-item label="ID：" prop="id">
@@ -100,12 +103,12 @@
           </el-form-item>
           <el-form-item label="出生日期：" prop="birthday">
             <el-date-picker
-                style="width: 150px"
-                v-model="employeeForm.birthday"
-                type="date"
-                value-format="yyyy-MM-dd"
-                format="yyyy-MM-dd"
-                placeholder="出生日期">
+              style="width: 150px"
+              v-model="employeeForm.birthday"
+              type="date"
+              value-format="yyyy-MM-dd"
+              format="yyyy-MM-dd"
+              placeholder="出生日期">
             </el-date-picker>
           </el-form-item>
           <el-form-item label="手机：" prop="phoneNumber">
@@ -161,14 +164,14 @@
       </span>
     </el-dialog>
     <el-dialog
-        title="员工信息编辑"
-        :visible.sync="dialogVisibleEdit"
-        width="40%"
-        :before-close="handleClose">
+      title="员工信息编辑"
+      :visible.sync="dialogVisibleEdit"
+      width="40%"
+      :before-close="handleClose">
       <div style="width: 90%; margin: 0 auto">
         <el-form :model="employeeForm" label-width="120px" ref="employeeForm">
           <el-form-item label="ID：">
-            <el-input type="text" disabled=true v-model="employeeForm.id" style="width: 100px"></el-input>
+            <el-input type="text" disabled="true" v-model="employeeForm.id" style="width: 100px"></el-input>
           </el-form-item>
           <el-form-item label="姓名：">
             <el-input type="text" v-model="employeeForm.name" style="width: 100px"></el-input>
@@ -181,12 +184,12 @@
           </el-form-item>
           <el-form-item label="出生日期：">
             <el-date-picker
-                style="width: 150px"
-                v-model="employeeForm.birthday"
-                type="date"
-                value-format="yyyy-MM-dd"
-                format="yyyy-MM-dd"
-                placeholder="出生日期">
+              style="width: 150px"
+              v-model="employeeForm.birthday"
+              type="date"
+              value-format="yyyy-MM-dd"
+              format="yyyy-MM-dd"
+              placeholder="出生日期">
             </el-date-picker>
           </el-form-item>
           <el-form-item label="手机：">
@@ -255,8 +258,8 @@ import {
   getAllEmployee,
   getEmployeeById, monthlyCal, monthlyUpdate, yearlyCal, yearlyUpdate
 } from "@/network/hr";
-import {formatBirthday} from "@/common/utils";
-import {deleteAccount} from "@/network/Financial";
+import { formatBirthday } from "@/common/utils";
+import { deleteAccount } from "@/network/Financial";
 
 export default {
   name: "EmployeeManagementView",
@@ -276,44 +279,44 @@ export default {
         name: "",
         sex: "",
         birthday: "",
-        phoneNumber: "",
+        phoneNumber: ""
       },
       employeePostForm: {
         id: "",
         bankAccount: "",
         position: "",
-        salaryCalculationStrategy: "",
+        salaryCalculationStrategy: ""
       },
       monthForm: {
         id: "",
         baseSalary: "",
         postSalary: 0,
-        postRank: "",
+        postRank: ""
       },
       baseAndCommissionForm: {
         id: "",
         baseSalary: "",
-        commissionRate: "",
+        commissionRate: ""
       },
       yearForm: {
         id: "",
-        yearlySalary: "",
+        yearlySalary: ""
       },
       rules: {
         id: [
-          {required: true, message: "请输入ID", trigger: "blur"}
+          { required: true, message: "请输入ID", trigger: "blur" }
         ],
         name: [
-          {required: true, message: "请输入名字", trigger: "blur"}
+          { required: true, message: "请输入名字", trigger: "blur" }
         ],
         phoneNumber: [
-          {required: true, message: "请输入手机号码", trigger: "blur"}
-        ],
+          { required: true, message: "请输入手机号码", trigger: "blur" }
+        ]
       },
       postRules: {
         bankAccount: [
-          {required: true, message: "请输入银行账户", trigger: "blur"}
-        ],
+          { required: true, message: "请输入银行账户", trigger: "blur" }
+        ]
       }
 
     };
@@ -321,7 +324,7 @@ export default {
   mounted() {
     getAllEmployee({}).then(_res => {
       this.employeeList = _res.result;
-    })
+    });
 
   },
   methods: {
@@ -333,18 +336,18 @@ export default {
           if (item.name.includes(this.search)) {
             return item;
           }
-        })
+        });
       }
     },
     formatBirthday,
     handleClose(done) {
       this.$confirm("确认取消？")
-          .then(_ => {
-            this.resetForm();
-            done();
-          })
-          .catch(_ => {
-          });
+        .then(_ => {
+          this.resetForm();
+          done();
+        })
+        .catch(_ => {
+        });
     },
     addEmployee() {
       this.dialogVisible = true;
@@ -353,8 +356,8 @@ export default {
       if (this.employeePostForm.position === "销售人员") {
         this.employeePostForm.salaryCalculationStrategy = "提成制";
       } else if (this.employeePostForm.position === "库存人员"
-          || this.employeePostForm.position === "人力资源人员"
-          || this.employeePostForm.position === "财务人员") {
+        || this.employeePostForm.position === "人力资源人员"
+        || this.employeePostForm.position === "财务人员") {
         this.employeePostForm.salaryCalculationStrategy = "月薪制";
       } else if (this.employeePostForm.position === "总经理") {
         this.employeePostForm.salaryCalculationStrategy = "年薪制";
@@ -367,35 +370,35 @@ export default {
       this.baseAndCommissionForm.id = id;
       this.yearForm.id = id;
       if (this.employeeForm.id === ""
-          || this.employeeForm.name === ""
-          || this.employeeForm.sex === ""
-          || this.employeeForm.birthday === ""
-          || this.employeePostForm.position === ""
-          || this.employeePostForm.bankAccount === "") {
+        || this.employeeForm.name === ""
+        || this.employeeForm.sex === ""
+        || this.employeeForm.birthday === ""
+        || this.employeePostForm.position === ""
+        || this.employeePostForm.bankAccount === "") {
         this.flag = true;
         this.$message.error("表单信息不完整！");
       }
       if (index === 1 && this.flag === false) {
         if (this.authorization() === 1) {
-          if(this.baseAndCommissionForm.baseSalary===""||this.baseAndCommissionForm.commissionRate===""){
-            this.flag=true;
-          }else{
+          if (this.baseAndCommissionForm.baseSalary === "" || this.baseAndCommissionForm.commissionRate === "") {
+            this.flag = true;
+          } else {
             baseAndCommissionCal(this.baseAndCommissionForm);
           }
         } else if (this.authorization() === 2) {
-          if(this.yearForm.yearlySalary===""){
-            this.flag=true;
-          }else{
+          if (this.yearForm.yearlySalary === "") {
+            this.flag = true;
+          } else {
             yearlyCal(this.yearForm);
           }
         } else if (this.authorization() === 3) {
-          if(this.monthForm.baseSalary===""||this.monthForm.postSalary===""||this.monthForm.postRank===""){
-            this.flag=true;
-          }else{
+          if (this.monthForm.baseSalary === "" || this.monthForm.postSalary === "" || this.monthForm.postRank === "") {
+            this.flag = true;
+          } else {
             monthlyCal(this.monthForm);
           }
         }
-        if(this.flag===false){
+        if (this.flag === false) {
           employeeAdd(this.employeeForm);
           employeePostAdd(this.employeePostForm).then(_res => {
             if (_res.msg === "Success") {
@@ -409,30 +412,30 @@ export default {
               this.$message.error("创建失败！");
             }
           });
-        }else{
+        } else {
           this.$message.error("表单信息不完整！");
         }
       } else if (index === 2 && this.flag === false) {
         if (this.authorization() === 1) {
-          if(this.baseAndCommissionForm.baseSalary===""||this.baseAndCommissionForm.commissionRate===""){
-            this.flag=true;
-          }else{
+          if (this.baseAndCommissionForm.baseSalary === "" || this.baseAndCommissionForm.commissionRate === "") {
+            this.flag = true;
+          } else {
             baseAndCommissionUpdate(this.baseAndCommissionForm);
           }
         } else if (this.authorization() === 2) {
-          if(this.yearForm.yearlySalary===""){
-            this.flag=true;
-          }else{
+          if (this.yearForm.yearlySalary === "") {
+            this.flag = true;
+          } else {
             yearlyUpdate(this.yearForm);
           }
         } else if (this.authorization() === 3) {
-          if(this.monthForm.baseSalary===""||this.monthForm.postSalary===""||this.monthForm.postRank===""){
-            this.flag=true;
-          }else{
+          if (this.monthForm.baseSalary === "" || this.monthForm.postSalary === "" || this.monthForm.postRank === "") {
+            this.flag = true;
+          } else {
             monthlyUpdate(this.monthForm);
           }
         }
-        if(this.flag===false){
+        if (this.flag === false) {
           employeeUpdate(this.employeeForm);
           employeePostUpdate(this.employeePostForm).then(_res => {
             if (_res.msg === "Success") {
@@ -446,14 +449,14 @@ export default {
               this.$message.error("修改失败！");
             }
           });
-        }else{
+        } else {
           this.$message.error("表单信息不完整！");
         }
       }
       clearTimeout(this.timer);  //清除延迟执行
-      this.timer = setTimeout(()=>{   //设置延迟执行
-        this.flag=false;
-      },1000);
+      this.timer = setTimeout(() => {   //设置延迟执行
+        this.flag = false;
+      }, 1000);
     },
     editInfo(row) {
       this.employeeForm = JSON.parse(JSON.stringify(row));
@@ -462,7 +465,7 @@ export default {
     },
     deleteEmployee(id) {
       this.$confirm("确认删除？").then(_ => {
-        employeeDelete({params: {id: id}}).then(_res => {
+        employeeDelete({ params: { id: id } }).then(_res => {
           if (_res.msg === "Success") {
             this.$message({
               type: "success",
@@ -478,8 +481,8 @@ export default {
             });
             alert(name);
           }
-        })
-      })
+        });
+      });
     },
     resetForm() {
       this.employeeForm = {
@@ -487,7 +490,7 @@ export default {
         name: "",
         sex: "",
         birthday: "",
-        phoneNumber: "",
+        phoneNumber: ""
       };
       this.employeePostForm = {
         id: "",
@@ -497,8 +500,8 @@ export default {
         postSalary: "",
         postRank: "",
         salaryCalculationStrategy: "",
-        salaryPayment: "",
-      }
+        salaryPayment: ""
+      };
     },
     authorization() {
       if (this.employeePostForm.position === "销售人员") {
@@ -506,8 +509,8 @@ export default {
       } else if (this.employeePostForm.position === "总经理") {
         return 2;
       } else if (this.employeePostForm.position === "库存人员"
-          || this.employeePostForm.position === "人力资源人员"
-          || this.employeePostForm.position === "财务人员") {
+        || this.employeePostForm.position === "人力资源人员"
+        || this.employeePostForm.position === "财务人员") {
         return 3;
       } else {
         return 4;
@@ -516,7 +519,7 @@ export default {
     }
   }
 
-}
+};
 </script>
 
 <style scoped>

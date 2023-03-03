@@ -11,7 +11,7 @@
           fixed
           prop="id"
           label="编号"
-          min-width="152">
+          min-width="200">
         </el-table-column>
         <el-table-column
           prop="name"
@@ -26,12 +26,12 @@
         <el-table-column
           prop="purchasePrice"
           label="进价"
-          min-width="200">
+          min-width="150">
         </el-table-column>
         <el-table-column
           prop="retailPrice"
           label="零售价"
-          min-width="200">
+          min-width="150">
         </el-table-column>
         <el-table-column min-width="220">
           <template slot="header">

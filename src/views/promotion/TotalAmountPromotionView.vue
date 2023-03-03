@@ -3,8 +3,7 @@
     <Title title="总价促销策略"></Title>
     <div>
       <span><strong> 总价促销策略 </strong></span>
-      <el-button type="primary" size="small" @click="add">新增</el-button><br><br>
-      <span style="color: red"> 注：当总价达到某一价格档次时，只触发该档次对应的促销策略。例如：当总价达到25000元时，只触发20000元档次的促销策略 </span>
+      <el-button type="primary" size="small" @click="add">新增策略</el-button><br><br>
       <div style="margin-top: 10px">
         <el-table
           :data="totalAmountForm"
